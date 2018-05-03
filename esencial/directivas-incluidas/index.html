@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Directivas</title>
+</head>
+<body>
+  
+  <main>
+    <h1 v-show="conectado">Estoy conectado</h1>
+    <blockquote>v-show no desaparece el elemento en el DOM solo coloca una atributo style con display none</blockquote>
+    <br>
+    <h2 v-if="edad < 18">No puedes ingresar</h2>
+    <h2 v-else-if="edad > 200">Eres inmortal</h2>
+    <h2 v-else>Puedes entrar</h2>
+    <blockquote>v-if,else-if,else permiten hacer condicionales para que muestren o no elementos en  el DOM</blockquote>
+    <pre>{{$data}}</pre>
+
+    <template v-if="conectado">
+      <h3>Bienvenido</h3>
+      <ul>
+        <li>
+          <a href="#">Dato Uno</a>
+          <a href="#">Dato Dos</a>
+          <a href="#">Dato Tres</a>
+        </li>
+      </ul>
+    </template>
+    <h4 v-else>No estas conectado</h4>
+    <blockquote>template v-if, permite que una catidad de elementos se muestre o nó dependiendo del valor de la condición</blockquote>
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
