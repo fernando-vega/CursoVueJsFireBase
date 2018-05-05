@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Propiedades computadas</title>
+</head>
+<body>
+  
+  <main>
+    <h1>Mensaje Origial: {{ message }}</h1>
+    <h2>Mensaje al Reves: {{ reversedMessage }}</h2>
+    <ul>
+      <h3>Tareas</h3>
+      <li v-for="tarea in tareas"> {{tarea.titulo}} </li>
+    </ul>
+    <ul>
+      <h3>Tareas con prioridad</h3>
+      <li v-for="tarea in tareasConPrioridad"> {{tarea.titulo}} <span> {{tarea.prioridad}} </span> </li>
+    </ul>
+    <ul>
+      <h3>Tareas por antiguedad</h3>
+      <li v-for="tarea in tareasPorAntiguedad"> {{tarea.titulo}} <span> {{tarea.antiguedad}} </span> </li>
+    </ul>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
