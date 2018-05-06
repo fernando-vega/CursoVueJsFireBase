@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Binding en atributos y clases</title>
+  <style>
+    li{
+      cursor: pointer;
+    }
+    .completado{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <h1>Tareas</h1>
+    <p>En v-bind:class tambien se puede usar :class y funcionara igual, es decir que se puede reemplazar v-bind por : directamente</p>
+    <ul>
+      <li v-bind:class="{completado: tarea.completado}"
+          @click="completarTarea(tarea)"
+          v-for="tarea in tareas"> 
+          {{tarea.titulo}} </li>
+    </ul>
+    <h2>Tareas completadas: {{ tareasCompletadas.length }} </h2>
+
+    <pre>{{$data}}</pre>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
