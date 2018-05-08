@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Templates</title>
+</head>
+
+<body>
+
+  <main>
+    <elegir-ganador :listado="personas"></elegir-ganador>
+    <pre>{{$data}}</pre>
+  </main>
+
+  <!-- Elemento con tag template -->
+  <template id="elegir-ganador-template">
+    <div>
+        <h1 v-if="ganador" >El ganador es: {{ ganador }} </h1>
+        <template v-else>
+          <h1>Participantes</h1>
+          <ul>
+          <li v-for='persona in listado'> {{ persona }} </li>
+          </ul>
+        </template>
+        <button @click="elegirGanador"> Elegir ganador</button>
+      </div>
+  </template>
+
+  <!-- Elemento script -->
+  <!-- <template id="elegir-ganador-template">
+      <div>
+          <h1 v-if="ganador" >El ganador es: {{ ganador }} </h1>
+          <template v-else>
+            <h1>Participantes</h1>
+            <ul>
+            <li v-for='persona in listado'> {{ persona }} </li>
+            </ul>
+          </template>
+          <button @click="elegirGanador"> Elegir ganador</button>
+        </div>
+    </template> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
