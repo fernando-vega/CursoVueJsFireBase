@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Componentes | Introducción</title>
+</head>
+
+<body>
+
+  <h1>Componentes | Que son?</h1>
+  <p>
+    El nombre que le dé a un componente puede depender de dónde quiera usarlo. Cuando se usa un componente directamente en el DOM (a diferencia de en una plantilla de cadena o componente de un solo archivo), recomendamos encarecidamente seguir las reglas W3C para nombres de etiqueta personalizados (todo en minúsculas, debe contener un guión). Esto le ayuda a evitar conflictos con elementos HTML actuales y futuros.
+  </p>
+  <main>
+    <!-- <ul>
+      <li v-for="dato in datos"> {{dato.title}} </li>
+    </ul> -->
+    <!-- <h2>Tareas Ajax</h2>
+    <mis-tareas :datos="datos"></mis-tareas>
+    <h2>Tareas locales</h2>
+    <mis-tareas :datos="datosLocales"></mis-tareas> -->
+
+    <h2>Tareas</h2>
+    <mis-tareas></mis-tareas>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
