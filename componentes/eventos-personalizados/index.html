@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Eventos personalizados</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+  <h1>Eventos personalizados</h1>
+  <p>Sirven para pasar enviar información desde el hijo al padre</p>
+
+  <main>
+    <button @click="mostrarExito = true">Exito</button>
+    <button  @click="mostrarError = true">Error</button>
+    <alerta @ocultar="mostrarExito = false" v-show="mostrarExito" tipo="alerta--exito" posicion="alerta--arriba-derecha">
+      <template slot="header"> Todo OK </template>
+      <template slot="content"> Contenido OK </template>
+      <template slot="footer"> Puedes continuar </template>
+    </alerta>
+    <alerta @ocultar="mostrarError = false" v-show="mostrarError" tipo="alerta--error" posicion="alerta--abajo-derecha">
+      <template slot="header"> Todo mal </template>
+      <template slot="content"> Contenido mal </template>
+      <template slot="footer"> No puedes continuar </template>
+    </alerta>
+    <pre> {{ $data }} </pre>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="./javascript/main.js"></script>
+</body>
+
+</html>
