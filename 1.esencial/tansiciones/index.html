@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transiciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+  <style>
+    /*
+    * Transiciones
+    */
+
+    .aparecer-enter{
+      opacity: 0;
+    }
+    .aparecer-enter-active{
+      transition: all 1s ease-in-out;
+    }
+    .aparecer-leave-to{
+      opacity: 0;
+    }
+    .aparecer-leave-active{
+      transition: all 1s ease-in-out;
+    }
+
+    /*
+    * Animaciones
+    */
+
+    .bounce-enter-active {
+      animation: bounce-in .5s;
+    }
+
+    .bounce-leave-active {
+      animation: bounce-in .5s reverse;
+    }
+
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <h1>Transiciones </h1>
+    <button @click="mostrar = !mostrar">Mostrar/Ocultar</button>
+    <h2>Transiciones</h2>
+    <transition appear name="aparecer">
+      <h2 v-if="mostrar" v-text="mensaje"></h2>
+    </transition>
+    <br>
+    <h2>Animaciones</h2>
+    <transition appear name="bounce">
+      <h2 v-if="mostrar" v-text="mensaje"></h2>
+    </transition>
+    <br>
+    <!-- Animate.css -->
+    <h2>Libreria Animate.css</h2>
+    <transition appear
+        name="animate" 
+        enter-active-class="animated rotateInUpLeft"
+        leave-active-class="animated zoomOutUp">
+        <h2 v-if="mostrar" v-text="mensaje"></h2>    
+    </transition>
+    <br>
+    <h2>Animaciones entre diferentes elementos</h2>
+    <transition appear name="aparecer" mode="out-in">
+      <h2 v-if="mostrar" key="mensaje" v-text="mensaje"></h2>
+      <h2 v-else="mostrar" key="noMensaje">No hay mensaje</h2>
+    </transition>
+  </main>
+  <hr>
+  <blockquote>appear: Este se utiliza para que la animación indicada en el elemento se active al cargar la página.</blockquote>
+  <blockquote>enter-active-class: Es la animacion o transició de entrada del elemento</blockquote>
+  <blockquote>leave-active-class: Es la animacion o transició de entrada del elemento</blockquote>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
