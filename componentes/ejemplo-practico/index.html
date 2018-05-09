@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejemplo practico de componentes</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <main>
+      <lista-usuarios>
+        <h3>Usuarios</h3>
+      </lista-usuarios>
+    </main>
+
+
+    <template id="usuarios-template">
+      <div>
+        <section class="cabecera">
+          <slot></slot>
+          <input type="search" placeholder="Filtrar usuarios" v-model="busqueda">
+        </section>
+        <hr>
+        <section class="usuarios">
+          <usuario v-for="usuario in filtrarUsuarios" :datos="usuario"></usuario>
+        </section>
+      </div>
+    </template>
+
+    <template id="usuario-template">
+      <div class="usuario">
+        <img align="left" :src="datos.foto" :alt="datos.nombre">
+        <section>
+          <h4> {{datos.nombre}} </h4>
+          <small> {{datos.correo}} </small>
+        </section>
+      </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./javascript/main.js"></script>
+  
+</body>
+</html>
